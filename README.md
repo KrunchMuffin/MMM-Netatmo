@@ -1,23 +1,20 @@
-[![Build Status](https://travis-ci.org/CFenner/MMM-Netatmo.svg?branch=master)](https://travis-ci.org/CFenner/MMM-Netatmo)
-[![Known Vulnerabilities](https://snyk.io/test/github/cfenner/magicmirror-netatmo-module/badge.svg)](https://snyk.io/test/github/cfenner/magicmirror-netatmo-module)
-[![code climate](https://codeclimate.com/github/CFenner/MMM-Netatmo/badges/gpa.svg)](https://codeclimate.com/github/CFenner/MMM-Netatmo)
-[![api](https://img.shields.io/badge/api-Netatmo-orange.svg)](https://dev.netatmo.com/doc)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://choosealicense.com/licenses/mit/)
 
 # MagicMirror-Netatmo-Module
 
 A module to integrate data from a Netatmo weather station into [MagicMirror](https://github.com/MichMich/MagicMirror).
 
-![Netatmo visualisation](https://github.com/CFenner/MagicMirror-Netatmo-Module/blob/master/.github/preview.png)
+![Netatmo visualisation](https://github.com/KrunchMuffin/MagicMirror-Netatmo-Module/blob/master/.github/preview.png)
 
 ## Usage
 
 _Prerequisites_
 
-- requires MagicMirror v2.0.0
+- requires MagicMirror v2.0.0+
 - Access to a Netatmo weather station account
 
-To use this module, just clone this repository to your __modules__ folder of your MagicMirror: 
+To use this module, just clone this repository to your __modules__ folder of your MagicMirror:
+
 `git clone https://github.com/KrunchMuffin/MagicMirror-Netatmo-Module.git netatmo`
 
 Now just add the module to your config.js file ([config entries](#configuration)).
@@ -76,6 +73,6 @@ The following properties can be configured:
 |clientId|The ID of your Netatmo [application](https://dev.netatmo.com/dev/listapps).<br><br>This value is **REQUIRED**|
 |clientSecret|The app secret of your Netatmo [application](https://dev.netatmo.com/dev/listapps).<br><br>This value is **REQUIRED**|
 |refreshToken|The generated refresh token you got from the POST request to the auth api.<br><br>This value is **REQUIRED**|
-|refreshInterval|How often does the content needs to be updated? (Minutes)<br>Data is updated by netatmo every 10 minutes.<br><br>**Default value:** `3`|
+|refreshInterval|How often does the content needs to be updated? (Minutes)<br>Data is updated by netatmo every 10 minutes.<br><br>**Default value:** `10`|
 |moduleOrder|The rendering order of your weather modules, ommit a module to hide the output.<br><br>**Example:** `["Kitchen","Kid's Bedroom","Garage","Garden"]` <br>Be aware that you need to use the module names that you set in the netatmo configuration.|
 |dataOrder|The rendering order of the data types of a module, ommit a data type to hide the output.<br><br>**Example:** `["Noise","Pressure","CO2","Humidity","Temperature","Rain"]`|
