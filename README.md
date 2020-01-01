@@ -15,7 +15,7 @@ _Prerequisites_
 
 To use this module, just clone this repository to your __modules__ folder of your MagicMirror:
 
-`git clone https://github.com/KrunchMuffin/MMM-Netatmo/MMM-Netatmo.git netatmo`
+`git clone https://github.com/KrunchMuffin/MMM-Netatmo.git netatmo`
 
 Now just add the module to your config.js file ([config entries](#configuration)).
 
