@@ -6,7 +6,7 @@
 
 # MagicMirror-Netatmo-Module
 
-A module to integrale informations from a Netatmo weather station into the [MagicMirror](https://github.com/MichMich/MagicMirror).
+A module to integrate data from a Netatmo weather station into [MagicMirror](https://github.com/MichMich/MagicMirror).
 
 ![Netatmo visualisation](https://github.com/CFenner/MagicMirror-Netatmo-Module/blob/master/.github/preview.png)
 
@@ -15,11 +15,10 @@ A module to integrale informations from a Netatmo weather station into the [Magi
 _Prerequisites_
 
 - requires MagicMirror v2.0.0
-- a Netatmo weather station at home or at least access to a Netatmo weather station account
+- Access to a Netatmo weather station account
 
-To use this module with the **old module system**, use this branch: https://github.com/CFenner/MagicMirror-Netatmo-Module/tree/rel-1.0
-
-To use this module, just clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/CFenner/MagicMirror-Netatmo-Module.git netatmo`
+To use this module, just clone this repository to your __modules__ folder of your MagicMirror: 
+`git clone https://github.com/KrunchMuffin/MagicMirror-Netatmo-Module.git netatmo`
 
 Now just add the module to your config.js file ([config entries](#configuration)).
 
@@ -29,7 +28,7 @@ To be able to access your data, you need to have an Netatmo Application and gran
 
 #### Register an App
 
-Your can register a new app [here](https://dev.netatmo.com/dev/createapp). Afterwards you will get an APP_ID and an APP_SECRET which you will need to enter in the [config entries](#configuration).
+Your can register a new app [here](https://dev.netatmo.com/dev/createapp). Afterwards you will get an CLIENT_ID and an CLIENT_SECRET which you will need to enter in the [config entries](#configuration).
 
 #### Grant Access to Your Data
 
@@ -37,40 +36,22 @@ To allow the app to access your data, you need to send a POST request to the aut
 
 ##### cURL
 
-One option is to use the command line tool [cURL](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjqgN789KnaAhUBalAKHR-NDLoQFgg2MAE&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FCURL&usg=AOvVaw27-lfQBHvLQPR2qsddIR6U). 
+One option is to use the command line tool [cURL](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwjqgN789KnaAhUBalAKHR-NDLoQFgg2MAE&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FCURL&usg=AOvVaw27-lfQBHvLQPR2qsddIR6U). 
 
 ```
-curl --data "grant_type=password&client_id=YOUR_CLIENT_ID&client_secret=YOUR_CLIENT_SECRET&username=YOUR_NETATMO_USERNAME&password=YOUR_NETATMO_PASSWORD&scope=read_station" "https://api.netatmo.com/oauth2/token"
+curl --data "grant_type=password&client_id=CLIENT_ID&client_secret=CLIENT_SECRET&username=NETATMO_USERNAME&password=NETATMO_PASSWORD&scope=read_station" "https://api.netatmo.com/oauth2/token"
 ```
 
-The POST request will return the following data:
+The POST request will return data similar to the following:
 
 ```
-{"access_token":"abc","refresh_token":"xyz","scope":["read_station"],"expires_in":10800,"expire_in":10800}
+{"access_token":"xyzmdgidkd|jdkmfkgmklmfism9ims","refresh_token":"xyzmdgidkd|dmdjekrlslkdolsk","scope":["read_station"],"expires_in":10800,"expire_in":10800}
 ```
 
 The REFRESH_TOKEN will be needed in the [config entries](#configuration).
 
-##### Hurl.it
-
-You can also send a POST request with [Hurl.it](https://www.hurl.it)([Git](https://github.com/defunkt/hurl)) to the Netatmo auth url: https://api.netatmo.com/oauth2/token
-
-Also you need to provide the following data (add as parameters):
-
-- grant_type: password
-- client_id: [APP_ID]
-- client_secret: [APP_SECRET]
-- username: [USER_MAIL]
-- password: [USER_PASSWORD]
-- scope: read_station
-
-The POST request will return the following data:
-
-- access_token: [ACCESS_TOKEN]
-- expires_in: 10800
-- refresh_token: [REFRESH_TOKEN]
-
-The REFRESH_TOKEN will be needed in the [config entries](#configuration).
+You can also use [Postman](https://www.getpostman.com/) to get these values.
+![Postman Visualisation](https://github.com/CFenner/MagicMirror-Netatmo-Module/blob/master/.github/preview.png)
 
 ### Configuration
 
@@ -78,8 +59,8 @@ The module needs the default configuration block in your config.js to work.
 
 ```
 {
-	module: 'netatmo',
-	position: 'bottom_left', // the location where the module should be displayed
+	module: 'MMM-Netatmo',
+	position: 'top_right', // the location where the module should be displayed
 	config: {
 		clientId: '', // your app id
 		clientSecret: '', // your app secret
