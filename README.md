@@ -4,7 +4,7 @@
 
 A module to integrate data from a Netatmo weather station into [MagicMirror](https://github.com/MichMich/MagicMirror).
 
-![Netatmo visualisation](https://github.com/KrunchMuffin/MagicMirror-Netatmo-Module/blob/master/.github/preview.png)
+![Netatmo visualisation](https://github.com/KrunchMuffin/MMM-Netatmo/blob/master/.github/preview.png)
 
 ## Usage
 
@@ -15,7 +15,7 @@ _Prerequisites_
 
 To use this module, just clone this repository to your __modules__ folder of your MagicMirror:
 
-`git clone https://github.com/KrunchMuffin/MagicMirror-Netatmo-Module.git netatmo`
+`git clone https://github.com/KrunchMuffin/MMM-Netatmo/MMM-Netatmo.git netatmo`
 
 Now just add the module to your config.js file ([config entries](#configuration)).
 
@@ -48,7 +48,7 @@ The POST request will return data similar to the following:
 The REFRESH_TOKEN will be needed in the [config entries](#configuration).
 
 You can also use [Postman](https://www.getpostman.com/) to get these values.
-![Postman Visualisation](https://github.com/CFenner/MagicMirror-Netatmo-Module/blob/master/.github/preview.png)
+![Postman Visualisation](https://github.com/KrunchMuffin/MMM-Netatmo/blob/master/.github/postman.png)
 
 ### Configuration
 
