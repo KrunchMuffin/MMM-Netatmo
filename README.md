@@ -76,3 +76,13 @@ The following properties can be configured:
 |refreshInterval|How often does the content needs to be updated? (Minutes)<br>Data is updated by netatmo every 10 minutes.<br><br>**Default value:** `10`|
 |moduleOrder|The rendering order of your weather modules, ommit a module to hide the output.<br><br>**Example:** `["Kitchen","Kid's Bedroom","Garage","Garden"]` <br>Be aware that you need to use the module names that you set in the netatmo configuration.|
 |dataOrder|The rendering order of the data types of a module, ommit a data type to hide the output.<br><br>**Example:** `["Noise","Pressure","CO2","Humidity","Temperature","Rain"]`|
+|showTrend|Show trending temp and pressure. <br><br>Default: true|
+|hideLoadTimer|Show ot hide the load timer<br><br>Default: false|
+|design|Change the design and appearance. <br><br>Options: classic (Default) or bubbles|
+|horizontal|Show vertically(false) or horizontally(true) (Default)|
+|lastMessageThreshold| 600 (in seconds (10 minutes))|
+|showLastMessage| true (Default)|
+|showBattery| true (default)|
+|showRadio| true (default)|
+|showWiFi| true (default)|
+|showTrend| true (default)|
